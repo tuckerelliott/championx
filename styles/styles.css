@@ -10,6 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
+ @import url("https://use.typekit.net/tyo3alg.css");
+
 :root {
   /* colors */
   --link-color: #035fe6;
@@ -59,7 +61,7 @@
   }
 }
 
-body {
+/* body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
@@ -67,6 +69,22 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+}
+*/
+
+body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'muli', sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0 0 10px;
+  color: #53565a;
+  font-size: 15px;
+  line-height: 1.57;
+  list-style-position: inside;
+  margin-bottom: 0;
 }
 
 body.appear {
@@ -77,7 +95,40 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
+h1 {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: .67em 0;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1.27;
+  margin-bottom: 20px;
+  color: #002a38;
+  margin-top: 0;
+}
+
+h3 {
+-webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+margin: 0 0 10px;
+font-family: 'rockwell', sans-serif;
+font-size: 14px;
+font-weight: 700;
+line-height: 1.43;
+letter-spacing: 4.3px;
+text-transform: uppercase;
+margin-bottom: 5px;
+color: #DC4405;
+}
+
+h2,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
@@ -87,9 +138,9 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
+/* h1 { font-size: var(--heading-font-size-xxl) } */
 h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
+/* h3 { font-size: var(--heading-font-size-l) } */
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
