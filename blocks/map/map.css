@@ -1,0 +1,6 @@
+map {
+    width: 640px;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+}
