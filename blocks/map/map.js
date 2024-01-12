@@ -1,12 +1,10 @@
 
 function loadJS(src) {
     const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.defer = true;
     script.innerHTML = `
       (()=>{
         let script = document.createElement('script');
+        script.type = 'text/javascript';
         script.src = '${src}';
         document.head.append(script);
       })();
@@ -19,61 +17,70 @@ async function initGoogleMapsAPI() {
     loadJS(src);
 }
 
-
 function initialize() {
 
-    initGoogleMapsAPI();
+  // Setup map and options
+  const map = new google.maps.Map(document.getElementById("map"), {
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
 
-    // Setup map and options
-    var map = new google.maps.Map(document.getElementByClassName("map block"), {
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+  let bounds = new google.maps.LatLngBounds();
 
-    // Get the Json file data
-    $.getJSON("locations.json", function(data) {
 
-      // Loop through the data
-      $.each(data, function(key, data) {
+  fetch('locations.json')
+          .then(response => response.json())
+          .then(data => {
+            // Loop through the data
+            if (Array.isArray(data.data)) {
+              data.data.forEach(item => {
 
-        var myLatlng = new google.maps.LatLng(data.lat, data.lng); // set position
+                const myLatlng = new google.maps.LatLng(item.lat, item.lng); // set position
 
-        // Add marker to map
-        var marker = new google.maps.Marker({
-          position: myLatlng,
-          map: map,
-        });
+                // Add marker to map
+                const marker = new google.maps.Marker({
+                  position: myLatlng,
+                  map: map,
+                });
 
-        // Set info window content
-        var infoContent = '<strong>' + data.name + '</strong>';
-            infoContent+= '<p>' + data.address + '</p>';
+                bounds.extend(marker.position); // extend bounds with marker
 
-        // Add info window
-        marker.info = new google.maps.InfoWindow({
-          content: infoContent
-        });
+                // Set info window content
+                let infoContent = '<strong>' + item.name + '</strong>';
+                infoContent += '<p>' + item.address + '</p>';
 
-        // Add listener for info window
-        google.maps.event.addListener(marker, 'click', function() {
-          marker.info.open(map, marker);
-        });
+                // Add info window
+                marker.info = new google.maps.InfoWindow({
+                  content: infoContent
+                });
 
-        // Add marker location to loc var
-        var loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+                // Add listener for info window
+                google.maps.event.addListener(marker, 'click', function () {
+                  marker.info.open(map, marker);
+                });
 
-        // extend bounds with loc
-        bounds.extend(loc);
+                // Add marker location to loc var
+                const loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
 
-      });
+                // extend bounds with loc
+                bounds.extend(loc);
+              });
+              map.fitBounds(bounds);
+              map.panToBounds(bounds);
+            } else {
+              console.error('Error: data is not an array');
+            }
+          })
+          .catch(error => console.error('Error:', error));
+}
 
-    });
+document.addEventListener("DOMContentLoaded", function() {
+  initialize(); // init map
+});
 
-    var bounds  = new google.maps.LatLngBounds();
-
-    map.fitBounds(bounds); // auto zoom
-    map.panToBounds(bounds); // auto center
-
-  }
-
+export default function decorate(block) {
+  initGoogleMapsAPI();
+  const map = document.createElement('map_canvas');
+  map_canvas.innerHTML = `<strong>'map text'</strong>`;
   initialize(); // init map
 
-
+}
