@@ -4,3 +4,9 @@ map {
     position: relative;
     overflow: hidden;
 }
+
+.map map_canvas {
+    position: relative;
+    overflow: hidden;
+    color: blue;
+}

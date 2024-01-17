@@ -20,7 +20,7 @@ async function initGoogleMapsAPI() {
 function initialize() {
 
   // Setup map and options
-  const map = new google.maps.Map(document.getElementById("map"), {
+  const map = new google.maps.Map(document.getElementsById("map_canvas"), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
@@ -79,8 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 export default function decorate(block) {
   initGoogleMapsAPI();
-  const map = document.createElement('map_canvas');
-  map_canvas.innerHTML = `<strong>'map text'</strong>`;
+  const mapDiv = block.querySelector('div:last-of-type');
+  const map_canvas = document.createElement('map_canvas');
+  // map_canvas.innerHTML = `<strong>'map text'</strong>`;
+  mapDiv.replaceWith(map_canvas);
+
   initialize(); // init map
 
 }
