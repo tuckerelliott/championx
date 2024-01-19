@@ -13,7 +13,7 @@
 
 .recent-articles h4 { margin: 0;
     margin-bottom: 16px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 22px;
     line-height: 24px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -29,15 +29,17 @@
             position: relative;
             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
             top: 4px;
+            text-transform: none;
         }
 
 
 .recent-articles p {
-        font-size: var(--body-font-size-xs); color: #696969;
+        font-size: 14px;
+        color: #696969;
         overflow: hidden;
        /* text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; */
         margin: 1.5em 0 0;
-        line-height: 1;
+        line-height: 1.5;
         }    
 
 .recent-articles h1 {

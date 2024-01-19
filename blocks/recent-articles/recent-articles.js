@@ -9,9 +9,10 @@ export default async function decorate(block) {
             const picture = createOptimizedPicture(image, '', false, [{ width: 400 }])
             return `
                 <a href="${path}" title="${title}" class="recent-article">
-                    <h3>NEWS</h3></br>
+                    <h3>News</h3></br>
                     <h4>${title}</h4>
                     <p>${description}</p>
+                    <p><a  class="button" href="${path}">View More</a></p>
                 </a>`
         });
        block.innerHTML = `<ul>${teasers.map(teaser => `<br><li>${teaser}</li>`).join('\n')}</ul>`

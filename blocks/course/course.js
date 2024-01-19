@@ -73,6 +73,7 @@ export default async function decorate($block) {
   $p.textContent = desc;
 
   const $link = document.createElement('div');
+  $link.className = "button";
   $link.append(link);
   link.textContent = 'Register Here';
 
