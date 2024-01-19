@@ -54,3 +54,11 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+.cards.icons > ul > li img {
+  width: 15%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
