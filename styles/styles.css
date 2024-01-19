@@ -111,6 +111,22 @@ h1 {
   margin-top: 0;
 }
 
+h2 {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: .67em 0;
+  font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.27;
+  margin-bottom: 20px;
+  color: #002a38;
+  margin-top: 0;
+}
+
 h3 {
 -webkit-text-size-adjust: 100%;
 -webkit-tap-highlight-color: transparent;
@@ -138,9 +154,9 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-/* h1 { font-size: var(--heading-font-size-xxl) } */
+/* h1 { font-size: var(--heading-font-size-xxl) }
 h2 { font-size: var(--heading-font-size-xl) }
-/* h3 { font-size: var(--heading-font-size-l) } */
+h3 { font-size: var(--heading-font-size-l) } */
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
@@ -195,7 +211,7 @@ a.button:any-link, button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: #dc4405;
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
