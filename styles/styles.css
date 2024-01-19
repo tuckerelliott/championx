@@ -280,4 +280,6 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+  background-image: url(https://www.championx.com/assets/images/content/bg-blue-contact-us-new.png);
+  background-size: 100% auto;
 }

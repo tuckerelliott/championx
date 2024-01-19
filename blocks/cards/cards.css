@@ -62,3 +62,7 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+.section.hightlight {
+  background-image: url(https://www.championx.com/assets/images/content/bg-blue-contact-us-new.png);
+}
