@@ -1,0 +1,63 @@
+.course {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.course .image {
+  display: flex;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course .image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.course .image img {
+  margin-top: 0;
+  margin-bottom: 0;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.course .text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #FFF;
+  padding: 3.5em 2em 2em;
+}
+
+.course .text p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.75;
+}
+
+.course .text p.pretitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.75;
+}
+
+@media (min-width: 900px) {
+  .course {
+    flex-direction: row;
+  }
+
+  .course image img {
+    border-radius: 0 4% 4% 0;
+  }
+
+  .course .text {
+    border-radius: 4% 0 0 4%;
+  }
+}
