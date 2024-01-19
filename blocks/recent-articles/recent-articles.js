@@ -9,7 +9,7 @@ export default async function decorate(block) {
             const picture = createOptimizedPicture(image, '', false, [{ width: 400 }])
             return `
                 <a href="${path}" title="${title}" class="recent-article">
-                    <h3>NEWS</h3>
+                    <h3>NEWS</h3></br>
                     <h4>${title}</h4>
                     <p>${description}</p>
                 </a>`
