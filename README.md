@@ -1,9 +1,9 @@
-# Your Project's Title...
-Your project's description...
+# ChampionX website demo
+Demo project for prospective customer ChampionX
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--championx--tuckerelliott.hlx.page/
+- Live: https://main--championx--tuckerelliott.hlx.live/
 
 ## Installation
 
