@@ -78,7 +78,7 @@ export default async function decorate($block) {
 
   const $text = document.createElement('div');
   $text.classList.add('text');
-  $text.append($pre, $time, $instructor, $location, $cost, $h2, $p, $link);
+  $text.append($pre, $date, $time, $instructor, $location, $cost, $h2, $p, $link);
 
   const $image = document.createElement('div');
   $image.classList.add('image');
