@@ -60,7 +60,7 @@ async function submitForm(form, transformer) {
       body,
     });
     if (response.ok) {
-      window.location.href = form.dataset?.redirect || 'thankyou';
+      window.location.href = form.dataset?.redirect || 'index';
     } else {
       const error = await response.text();
       throw new Error(error);
