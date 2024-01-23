@@ -26,7 +26,7 @@
       "title": "Generate Variations",
       "url": "https://experience.adobe.com/aem/generate-variations",
       "passConfig": true,
-      "environments": ["preview","live", "edit"],
+      "environments": ["edit"],
       "includePaths": ["**.docx**"]
     }
   ]
